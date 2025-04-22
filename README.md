@@ -24,8 +24,8 @@ Open WSL terminal (Ubuntu recommended).
 ### Step 2: Clone Repository
 
 ```bash
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/etcyl/local_llms/tree/main
+cd local_llms/
 ```
 
 ### Step 3: Create Virtual Environment
