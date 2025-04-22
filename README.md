@@ -1,122 +1,74 @@
-
-# Local Coding LLM Chat
-
-https://www.youtube.com/watch?v=C3C3QQGjuoo
-
-## Overview
-This project implements a local coding assistant powered by multiple Large Language Models (LLMs), including Claude, CodeGemma, CodeLlama, Deepseek Coder, Mistral, and Phi. It features a Streamlit frontend, supports real-time interaction, web search integration, and detailed hardware monitoring.
-
----
-
-## Prerequisites
-- Windows Subsystem for Linux (WSL)
-- Python 3.8+ installed on WSL
-- CUDA-compatible GPU (optional, recommended for performance)
-
----
-
-## Installation
-
-### Step 1: Open WSL Terminal
-
-Open WSL terminal (Ubuntu recommended).
-
-### Step 2: Clone Repository
-
+{{PROJECT_NAME}}
+Description
+{{A concise description of the project, its purpose, and key features.}}
+Table of Contents
+Installation
+Usage
+Configuration
+Development
+Testing
+Contributing
+License
+Contact
+Installation
+1. Clone the repository:
+   ```bash
+   git clone {{REPO_URL}}
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd {{PROJECT_NAME}}
+   ```
+3. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+Usage
+Run the application:
 ```bash
-git clone https://github.com/etcyl/local_llms/
-cd local_llms/
+python main.py --config {{CONFIG_FILE_PATH}}
 ```
+Replace `--config` with any flags or arguments supported by the application.
+Configuration
+Configuration options are defined in `config/{{CONFIG_FILE_NAME}}`. Common parameters:
+- `HOST`: Server host (default: `127.0.0.1`)
+- `PORT`: Server port (default: `8080`)
+- `LOG_LEVEL`: Logging level (default: `INFO`)
+- `DATABASE_URL`: Database connection string
 
-### Step 3: Create Virtual Environment
-
-You can use either Python's built-in `venv` or Anaconda/Miniconda:
-
-**Using venv:**
+Update these values as needed for your environment.
+Development
+To set up a development environment:
+1. Install development dependencies:
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+2. Run linters:
+   ```bash
+   flake8 .
+   ```
+3. Format code:
+   ```bash
+   black .
+   ```
+Testing
+Execute the test suite:
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+pytest --maxfail=1 --disable-warnings -q
 ```
-
-**Using Conda:**
-```bash
-conda create -n local_llm python=3.10
-conda activate local_llm
-```
-
-### Step 4: Install Dependencies
-
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-Make sure the `requirements.txt` file includes:
-```text
-streamlit
-requests
-beautifulsoup4
-psutil
-torch
-```
-
----
-
-## Running the App
-
-### Step 1: Start LLM Backend Servers
-
-Ensure that your LLM backend servers (e.g., Ollama or Claude) are running locally:
-
-- Ollama (for CodeGemma, CodeLlama, Deepseek Coder, Mistral, Phi):
-```bash
-ollama serve
-```
-
-- Claude (if using):
-Follow Claude's setup documentation to run locally.
-
-### Step 2: Run Streamlit App
-
-Activate your virtual environment first:
-
-```bash
-source venv/bin/activate # or conda activate local_llm
-```
-
-Run Streamlit:
-```bash
-streamlit run app.py
-```
-
-The app will launch in your default web browser.
-
----
-
-## Features
-- Real-time coding assistance
-- Multiple LLM models with adjustable settings (temperature, tokens)
-- Web search integration for additional context
-- Interactive chat interface with logging and autosave functionality
-- System monitoring (CPU/GPU/memory usage)
-
----
-
-## Hardware Recommendations
-- GPU: NVIDIA RTX series recommended for optimal performance
-- RAM: 16GB+ recommended
-- CPU: Modern Intel or AMD CPU
-
----
-
-## Troubleshooting
-
-### Web Search Not Working
-- Ensure internet connectivity from WSL (`ping google.com`).
-- Check firewall settings on Windows to allow WSL network access.
-
-### GPU Not Detected
-- Ensure CUDA drivers are correctly installed in WSL (via WSLg or WSL2 with CUDA support).
-- Run `torch.cuda.is_available()` in Python to confirm GPU availability.
-
----
+Contributing
+Contributions are welcome. Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add YourFeature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+License
+This project is licensed under the {{LICENSE_NAME}} - see the [LICENSE](LICENSE) file for details.
+Contact
+Project maintained by {{MAINTAINER_NAME}} (<{{MAINTAINER_EMAIL}}>)
