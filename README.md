@@ -24,7 +24,7 @@ Open WSL terminal (Ubuntu recommended).
 ### Step 2: Clone Repository
 
 ```bash
-git clone https://github.com/etcyl/local_llms/tree/main
+git clone https://github.com/etcyl/local_llms/
 cd local_llms/
 ```
 
