@@ -118,14 +118,3 @@ The app will launch in your default web browser.
 - Run `torch.cuda.is_available()` in Python to confirm GPU availability.
 
 ---
-
-## License
-
-[Your project's license]
-
----
-
-## Support
-For issues, please open an issue in the GitHub repository or contact the maintainer at [your-email@example.com].
-
----
