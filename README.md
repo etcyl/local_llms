@@ -1,113 +1,122 @@
-<!--
-  DoT Color Theme:
-    • Primary:   #005C9C
-    • Secondary: #FF671F
--->
 
-<!-- Title -->
-<h1 align="center">
-  <span style="color:#005C9C">{{PROJECT_NAME}}</span>
-</h1>
+# Local Coding LLM Chat
 
-<!-- Description -->
-<h2 style="color:#005C9C">Description</h2>
-<p>
-  {{A concise description of the project, its purpose, and key features.}}
-</p>
+https://www.youtube.com/watch?v=C3C3QQGjuoo
 
-<!-- Table of Contents -->
-<h2 style="color:#005C9C">Table of Contents</h2>
-<ul>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#usage">Usage</a></li>
-  <li><a href="#configuration">Configuration</a></li>
-  <li><a href="#development">Development</a></li>
-  <li><a href="#testing">Testing</a></li>
-  <li><a href="#contributing">Contributing</a></li>
-  <li><a href="#license">License</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
+## Overview
+This project implements a local coding assistant powered by multiple Large Language Models (LLMs), including Claude, CodeGemma, CodeLlama, Deepseek Coder, Mistral, and Phi. It features a Streamlit frontend, supports real-time interaction, web search integration, and detailed hardware monitoring.
 
 ---
 
-<h2 id="installation" style="color:#005C9C">Installation</h2>
-<ol>
-  <li>Clone the repository:
-    <pre><code>git clone {{REPO_URL}}</code></pre>
-  </li>
-  <li>Navigate into the project directory:
-    <pre><code>cd {{PROJECT_NAME}}</code></pre>
-  </li>
-  <li>Create and activate a virtual environment:
-    <pre><code>python -m venv venv
-source venv/bin/activate # On Windows: venv\Scripts\activate</code></pre>
-  </li>
-  <li>Install dependencies:
-    <pre><code>pip install -r requirements.txt</code></pre>
-  </li>
-</ol>
+## Prerequisites
+- Windows Subsystem for Linux (WSL)
+- Python 3.8+ installed on WSL
+- CUDA-compatible GPU (optional, recommended for performance)
 
 ---
 
-<h2 id="usage" style="color:#005C9C">Usage</h2>
-Run the application with your config:
-<pre><code>python main.py --config {{CONFIG_FILE_PATH}}</code></pre>
-<p>
-Replace <code>--config</code> with any flags or arguments supported by the application.
-</p>
+## Installation
+
+### Step 1: Open WSL Terminal
+
+Open WSL terminal (Ubuntu recommended).
+
+### Step 2: Clone Repository
+
+```bash
+git clone https://github.com/etcyl/local_llms/
+cd local_llms/
+```
+
+### Step 3: Create Virtual Environment
+
+You can use either Python's built-in `venv` or Anaconda/Miniconda:
+
+**Using venv:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**Using Conda:**
+```bash
+conda create -n local_llm python=3.10
+conda activate local_llm
+```
+
+### Step 4: Install Dependencies
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Make sure the `requirements.txt` file includes:
+```text
+streamlit
+requests
+beautifulsoup4
+psutil
+torch
+```
 
 ---
 
-<h2 id="configuration" style="color:#005C9C">Configuration</h2>
-Configuration options live in <code>config/{{CONFIG_FILE_NAME}}</code>. Common parameters:
-<ul>
-  <li><code>HOST</code>: Server host (default: <code>127.0.0.1</code>)</li>
-  <li><code>PORT</code>: Server port (default: <code>8080</code>)</li>
-  <li><code>LOG_LEVEL</code>: Logging level (default: <code>INFO</code>)</li>
-  <li><code>DATABASE_URL</code>: Database connection string</li>
-</ul>
-Update these as needed for your environment.
+## Running the App
+
+### Step 1: Start LLM Backend Servers
+
+Ensure that your LLM backend servers (e.g., Ollama or Claude) are running locally:
+
+- Ollama (for CodeGemma, CodeLlama, Deepseek Coder, Mistral, Phi):
+```bash
+ollama serve
+```
+
+- Claude (if using):
+Follow Claude's setup documentation to run locally.
+
+### Step 2: Run Streamlit App
+
+Activate your virtual environment first:
+
+```bash
+source venv/bin/activate # or conda activate local_llm
+```
+
+Run Streamlit:
+```bash
+streamlit run app.py
+```
+
+The app will launch in your default web browser.
 
 ---
 
-<h2 id="development" style="color:#005C9C">Development</h2>
-To set up a development environment:
-<ol>
-  <li>Install dev dependencies:
-    <pre><code>pip install -r requirements-dev.txt</code></pre>
-  </li>
-  <li>Run linters:
-    <pre><code>flake8 .</code></pre>
-  </li>
-  <li>Format code:
-    <pre><code>black .</code></pre>
-  </li>
-</ol>
+## Features
+- Real-time coding assistance
+- Multiple LLM models with adjustable settings (temperature, tokens)
+- Web search integration for additional context
+- Interactive chat interface with logging and autosave functionality
+- System monitoring (CPU/GPU/memory usage)
 
 ---
 
-<h2 id="testing" style="color:#005C9C">Testing</h2>
-Execute the test suite:
-<pre><code>pytest --maxfail=1 --disable-warnings -q</code></pre>
+## Hardware Recommendations
+- GPU: NVIDIA RTX series recommended for optimal performance
+- RAM: 16GB+ recommended
+- CPU: Modern Intel or AMD CPU
 
 ---
 
-<h2 id="contributing" style="color:#005C9C">Contributing</h2>
-Contributions are welcome! Please:
-<ol>
-  <li>Fork the repo.</li>
-  <li>Create a branch: <code>git checkout -b feature/YourFeature</code>.</li>
-  <li>Commit your changes: <code>git commit -m "Add YourFeature"</code>.</li>
-  <li>Push to your branch: <code>git push origin feature/YourFeature</code>.</li>
-  <li>Open a Pull Request.</li>
-</ol>
+## Troubleshooting
+
+### Web Search Not Working
+- Ensure internet connectivity from WSL (`ping google.com`).
+- Check firewall settings on Windows to allow WSL network access.
+
+### GPU Not Detected
+- Ensure CUDA drivers are correctly installed in WSL (via WSLg or WSL2 with CUDA support).
+- Run `torch.cuda.is_available()` in Python to confirm GPU availability.
 
 ---
-
-<h2 id="license" style="color:#005C9C">License</h2>
-This project is licensed under the **{{LICENSE_NAME}}** – see the [LICENSE](LICENSE) file for details.
-
----
-
-<h2 id="contact" style="color:#005C9C">Contact</h2>
-Maintained by **{{MAINTAINER_NAME}}** (<{{MAINTAINER_EMAIL}}>)
