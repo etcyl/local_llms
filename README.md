@@ -1,6 +1,8 @@
 
 # Local Coding LLM Chat
 
+https://www.youtube.com/watch?v=C3C3QQGjuoo
+
 ## Overview
 This project implements a local coding assistant powered by multiple Large Language Models (LLMs), including Claude, CodeGemma, CodeLlama, Deepseek Coder, Mistral, and Phi. It features a Streamlit frontend, supports real-time interaction, web search integration, and detailed hardware monitoring.
 
