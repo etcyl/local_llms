@@ -1,124 +1,127 @@
 
 # Local Coding LLM Chat
 
-https://youtu.be/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo
-
-https://www.youtube.com/watch?v=C3C3QQGjuoo
+[Getting Started Video](https://youtu.be/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo)  
+[Features Overview Video](https://www.youtube.com/watch?v=C3C3QQGjuoo)
 
 ## Overview
-This project implements a local coding assistant powered by multiple Large Language Models (LLMs), including Claude, CodeGemma, CodeLlama, Deepseek Coder, Mistral, and Phi. It features a Streamlit frontend, supports real-time interaction, web search integration, and detailed hardware monitoring.
+This project provides a local coding assistant powered by multiple Large Language Models (LLMs), including:
+- Claude
+- CodeGemma
+- CodeLlama
+- Deepseek Coder
+- Mistral
+- Phi
 
----
+**Key features:**
+- Streamlit-based frontend for interactive chat
+- Real-time coding assistance
+- Web search integration for contextual references
+- Hardware monitoring (CPU, GPU, memory)
+- Adjustable model settings (temperature, token limits)
 
 ## Prerequisites
-- Windows Subsystem for Linux (WSL)
-- Python 3.8+ installed on WSL
-- CUDA-compatible GPU (optional, recommended for performance)
-
----
+- **Operating System:** Windows Subsystem for Linux (WSL) (Ubuntu recommended)  
+- **Python:** 3.8 or higher  
+- **GPU (optional):** CUDA-compatible (NVIDIA) for improved performance
 
 ## Installation
 
-### Step 1: Open WSL Terminal
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/etcyl/local_llms.git
+   cd local_llms
+   ```
 
-Open WSL terminal (Ubuntu recommended).
+2. **Set up a Python environment:**
+   - _Using venv:_
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+   - _Using Conda:_
+     ```bash
+     conda create -n local_llm python=3.10
+     conda activate local_llm
+     ```
 
-### Step 2: Clone Repository
+3. **Install dependencies:**
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+   > Ensure `requirements.txt` includes:
+   > ```txt
+   > streamlit
+   > requests
+   > beautifulsoup4
+   > psutil
+   > torch
+   > ```
 
-```bash
-git clone https://github.com/etcyl/local_llms/
-cd local_llms/
-```
+## Running the Application
 
-### Step 3: Create Virtual Environment
+1. **Start backend servers:**
+   - **Ollama:**  
+     ```bash
+     ollama serve
+     ```
+   - **Claude:**  
+     Follow Claude's local setup guide.
 
-You can use either Python's built-in `venv` or Anaconda/Miniconda:
-
-**Using venv:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-**Using Conda:**
-```bash
-conda create -n local_llm python=3.10
-conda activate local_llm
-```
-
-### Step 4: Install Dependencies
-
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-Make sure the `requirements.txt` file includes:
-```text
-streamlit
-requests
-beautifulsoup4
-psutil
-torch
-```
-
----
-
-## Running the App
-
-### Step 1: Start LLM Backend Servers
-
-Ensure that your LLM backend servers (e.g., Ollama or Claude) are running locally:
-
-- Ollama (for CodeGemma, CodeLlama, Deepseek Coder, Mistral, Phi):
-```bash
-ollama serve
-```
-
-- Claude (if using):
-Follow Claude's setup documentation to run locally.
-
-### Step 2: Run Streamlit App
-
-Activate your virtual environment first:
-
-```bash
-source venv/bin/activate # or conda activate local_llm
-```
-
-Run Streamlit:
-```bash
-streamlit run app.py
-```
-
-The app will launch in your default web browser.
-
----
+2. **Launch Streamlit app:**
+   ```bash
+   streamlit run app.py
+   ```
+   The app will open in your default browser at `http://localhost:8501`.
 
 ## Features
-- Real-time coding assistance
-- Multiple LLM models with adjustable settings (temperature, tokens)
-- Web search integration for additional context
-- Interactive chat interface with logging and autosave functionality
-- System monitoring (CPU/GPU/memory usage)
-
----
+- Real-time coding support with multiple LLMs
+- Web search integration for enhanced context
+- Interactive chat with autosave and logging
+- System resource monitoring dashboard
 
 ## Hardware Recommendations
-- GPU: NVIDIA RTX series recommended for optimal performance
-- RAM: 16GB+ recommended
-- CPU: Modern Intel or AMD CPU
-
----
+- **GPU:** NVIDIA RTX series  
+- **RAM:** 16 GB or more  
+- **CPU:** Modern Intel or AMD processor
 
 ## Troubleshooting
 
-### Web Search Not Working
-- Ensure internet connectivity from WSL (`ping google.com`).
-- Check firewall settings on Windows to allow WSL network access.
+### Web Search Issues
+- Verify internet access from WSL:
+  ```bash
+  ping google.com
+  ```
+- Check Windows firewall settings for WSL network.
 
 ### GPU Not Detected
-- Ensure CUDA drivers are correctly installed in WSL (via WSLg or WSL2 with CUDA support).
-- Run `torch.cuda.is_available()` in Python to confirm GPU availability.
+- Confirm CUDA drivers in WSL2:
+  ```python
+  import torch
+  print(torch.cuda.is_available())
+  ```
 
----
+## Contributing
+_Use this template to add guidelines for contributing:_
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/awesome-feature`).
+3. Commit your changes (`git commit -m "Add awesome feature"`).
+4. Push to the branch (`git push origin feature/awesome-feature`).
+5. Open a pull request.
+
+## License
+_Specify the project's license here (e.g., MIT, Apache 2.0)._
+
+## Acknowledgments
+- [Ollama](https://ollama.com)
+- [Anthropic Claude](https://www.anthropic.com/product/claude)
+- [Streamlit](https://streamlit.io)
+
+## Additional Information
+_Template for extra sections:_
+- **Security:** Describe security considerations.
+- **Performance Tuning:** Tips to optimize performance.
+- **FAQ:** Frequently Asked Questions and answers.
+- **Contact:** Maintainer's contact information.
