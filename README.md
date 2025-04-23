@@ -1,11 +1,8 @@
 
 # Local Coding LLM Chat
 
-<!-- Demo Videos -->
-<div style="display:flex; gap:1rem; flex-wrap:wrap;">
-  <iframe width="420" height="236" src="https://www.youtube.com/embed/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="420" height="236" src="https://www.youtube.com/embed/C3C3QQGjuoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+[![Demo 1](https://img.youtube.com/vi/Fh-Pue_GVPM/hqdefault.jpg)](https://youtu.be/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo)
+[![Demo 2](https://img.youtube.com/vi/C3C3QQGjuoo/hqdefault.jpg)](https://www.youtube.com/watch?v=C3C3QQGjuoo)
 
 ## Overview
 This project provides a local coding assistant powered by multiple Large Language Models (LLMs), including:
