@@ -2,9 +2,10 @@
 # Local Coding LLM Chat
 
 <!-- Demo Videos -->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C3C3QQGjuoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="display:flex; gap:1rem; flex-wrap:wrap;">
+  <iframe width="420" height="236" src="https://www.youtube.com/embed/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="420" height="236" src="https://www.youtube.com/embed/C3C3QQGjuoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Overview
 This project provides a local coding assistant powered by multiple Large Language Models (LLMs), including:
@@ -16,16 +17,16 @@ This project provides a local coding assistant powered by multiple Large Languag
 - Phi
 
 **Key features:**
-- Streamlit-based frontend for interactive chat
-- Real-time coding assistance
-- Web search integration for contextual references
-- Hardware monitoring (CPU, GPU, memory)
-- Adjustable model settings (temperature, token limits)
+- Streamlit-based frontend for interactive chat  
+- Real-time coding assistance  
+- Web search integration for contextual references  
+- Hardware monitoring (CPU, GPU, memory)  
+- Adjustable model settings (temperature, token limits)  
 
 ## Prerequisites
 - **Operating System:** Windows Subsystem for Linux (WSL) (Ubuntu recommended)  
 - **Python:** 3.8 or higher  
-- **GPU (optional):** CUDA-compatible (NVIDIA) for improved performance
+- **GPU (optional):** CUDA-compatible (NVIDIA) for improved performance  
 
 ## Installation
 
@@ -78,15 +79,15 @@ This project provides a local coding assistant powered by multiple Large Languag
    The app will open in your default browser at `http://localhost:8501`.
 
 ## Features
-- Real-time coding support with multiple LLMs
-- Web search integration for enhanced context
-- Interactive chat with autosave and logging
-- System resource monitoring dashboard
+- Real-time coding support with multiple LLMs  
+- Web search integration for enhanced context  
+- Interactive chat with autosave and logging  
+- System resource monitoring dashboard  
 
 ## Hardware Recommendations
 - **GPU:** NVIDIA RTX series  
 - **RAM:** 16 GB or more  
-- **CPU:** Modern Intel or AMD processor
+- **CPU:** Modern Intel or AMD processor  
 
 ## Troubleshooting
 
@@ -105,8 +106,7 @@ This project provides a local coding assistant powered by multiple Large Languag
   ```
 
 ## Contributing
-_Use this template to add guidelines for contributing:_
-
+Use this template to add guidelines for contributing:
 1. Fork the repository.
 2. Create a feature branch (`git checkout -b feature/awesome-feature`).
 3. Commit your changes (`git commit -m "Add awesome feature"`).
@@ -114,16 +114,32 @@ _Use this template to add guidelines for contributing:_
 5. Open a pull request.
 
 ## License
-_Specify the project's license here (e.g., MIT, Apache 2.0)._
+Specify the project's license here (e.g., MIT, Apache 2.0).
 
 ## Acknowledgments
 - [Ollama](https://ollama.com)
 - [Anthropic Claude](https://www.anthropic.com/product/claude)
 - [Streamlit](https://streamlit.io)
 
-## Additional Information
-_Template for extra sections:_
-- **Security:** Describe security considerations.
-- **Performance Tuning:** Tips to optimize performance.
-- **FAQ:** Frequently Asked Questions and answers.
-- **Contact:** Maintainer's contact information.
+## Security
+Outline security considerations and best practices, such as:
+- Secure handling of API keys and credentials  
+- Network isolation for backend services  
+- Regular dependency audits  
+
+## Performance Tuning
+Tips to optimize application performance:
+- Use a CUDA-compatible GPU for model inference  
+- Adjust Streamlit's `server.maxMessageSize` for large payloads  
+- Profile and optimize Python code with `cProfile` or `line_profiler`  
+
+## FAQ
+**Q:** Can I run this without a GPU?  
+**A:** Yes, but performance will be limited to CPU speeds.
+
+**Q:** How do I add a new LLM?  
+**A:** Update `MODEL_INFOS` in `app.py` and ensure the model server is running locally.
+
+## Contact
+- Maintainer: [Your Name](mailto:you@example.com)  
+- GitHub: [etcyl/local_llms](https://github.com/etcyl/local_llms)
