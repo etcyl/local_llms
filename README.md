@@ -105,9 +105,9 @@ This project provides a local coding assistant powered by multiple Large Languag
 ## Contributing
 Use this template to add guidelines for contributing:
 1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/awesome-feature`).
-3. Commit your changes (`git commit -m "Add awesome feature"`).
-4. Push to the branch (`git push origin feature/awesome-feature`).
+2. Create a feature branch (`git checkout -b feature/`).
+3. Commit your changes (`git commit -m "Add feature"`).
+4. Push to the branch (`git push origin feature/`).
 5. Open a pull request.
 
 ## License
@@ -117,12 +117,6 @@ Specify the project's license here (e.g., MIT, Apache 2.0).
 - [Ollama](https://ollama.com)
 - [Anthropic Claude](https://www.anthropic.com/product/claude)
 - [Streamlit](https://streamlit.io)
-
-## Security
-Outline security considerations and best practices, such as:
-- Secure handling of API keys and credentials  
-- Network isolation for backend services  
-- Regular dependency audits  
 
 ## Performance Tuning
 Tips to optimize application performance:
@@ -136,7 +130,3 @@ Tips to optimize application performance:
 
 **Q:** How do I add a new LLM?  
 **A:** Update `MODEL_INFOS` in `app.py` and ensure the model server is running locally.
-
-## Contact
-- Maintainer: [Your Name](mailto:you@example.com)  
-- GitHub: [etcyl/local_llms](https://github.com/etcyl/local_llms)
