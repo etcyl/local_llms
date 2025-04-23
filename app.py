@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Streamlit Coding-LLM Chat – SAFE EDITION ✨ v2.4
+Streamlit Coding-LLM Chat – v2.4
 ------------------------------------------------
 New
 • Timer now starts the moment the user clicks **Send**.
