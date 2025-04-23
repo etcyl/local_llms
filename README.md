@@ -1,8 +1,8 @@
 
 # Local Coding LLM Chat
 
-[Getting Started Video](https://youtu.be/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo)  
-[Features Overview Video](https://www.youtube.com/watch?v=C3C3QQGjuoo)
+[Demo 1](https://youtu.be/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo)  
+[Demo 2](https://www.youtube.com/watch?v=C3C3QQGjuoo)
 
 ## Overview
 This project provides a local coding assistant powered by multiple Large Language Models (LLMs), including:
