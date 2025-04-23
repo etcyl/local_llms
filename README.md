@@ -66,8 +66,6 @@ This project provides a local coding assistant powered by multiple Large Languag
      ```bash
      ollama serve
      ```
-   - **Claude:**  
-     Follow Claude's local setup guide.
 
 2. **Launch Streamlit app:**
    ```bash
