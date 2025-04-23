@@ -6,7 +6,6 @@
 
 ## Overview
 This project provides a local coding assistant powered by multiple Large Language Models (LLMs), including:
-- Claude
 - CodeGemma
 - CodeLlama
 - Deepseek Coder
