@@ -1,6 +1,8 @@
 
 # Local Coding LLM Chat
 
+https://youtu.be/Fh-Pue_GVPM?si=jQUgdoB3OzTPboFo
+
 https://www.youtube.com/watch?v=C3C3QQGjuoo
 
 ## Overview
